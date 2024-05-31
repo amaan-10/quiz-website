@@ -30,7 +30,7 @@ This is a multiple-choice quiz web application designed purely for entertainment
 ![Solving Quiz screenshot](images/que-options.png)
 
 ### Completion of quiz
-![Quiz ScoreCard screenshot](assets/images/score-card.png)
+![Quiz ScoreCard screenshot](images/score-card.png)
 
 
 ## Link
