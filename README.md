@@ -15,19 +15,19 @@ This is a multiple-choice quiz web application designed purely for entertainment
 ## Screenshots
 
 ### Start menu
-![Quiz start menu screenshot](assests/home-page.png)
+![Quiz start menu screenshot](images/home-page.png)
 
 ### Create Quiz 
-![Create Quiz screenshot](assets/create-quiz-page.png)
+![Create Quiz screenshot](images/create-quiz-page.png)
 
 ### Create Questions 
-![Create Quiz Questions screenshot](assets/create-quiz.png)
+![Create Quiz Questions screenshot](images/create-quiz.png)
 
 ### Start Quiz 
-![Select Quiz screenshot](assets/select-quiz.png)
+![Select Quiz screenshot](images/select-quiz.png)
 
 ### Solving Quiz 
-![Solving Quiz screenshot](assets/que-options.png)
+![Solving Quiz screenshot](images/que-options.png)
 
 ### Completion of quiz
 ![Quiz ScoreCard screenshot](assets/images/score-card.png)
