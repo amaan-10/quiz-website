@@ -15,16 +15,23 @@ This is a multiple-choice quiz web application designed purely for entertainment
 ## Screenshots
 
 ### Start menu
-![Quiz start menu screenshot](assets/images/start-screenshot.png)
+![Quiz start menu screenshot](assests/home-page.png)
 
-### Quiz questions
-![Quiz questions screenshot](assets/images/question-screenshot.png)
+### Create Quiz 
+![Create Quiz screenshot](assets/create-quiz-page.png)
+
+### Create Questions 
+![Create Quiz Questions screenshot](assets/create-quiz.png)
+
+### Start Quiz 
+![Select Quiz screenshot](assets/select-quiz.png)
+
+### Solving Quiz 
+![Solving Quiz screenshot](assets/que-options.png)
 
 ### Completion of quiz
-![Quiz completion screenshot](assets/images/complete-screenshot.png)
+![Quiz ScoreCard screenshot](assets/images/score-card.png)
 
-### Highscore list
-![Quiz highscore list screenshot](assets/images/highscores-screenshot.png)
 
 ## Link
 
