@@ -35,4 +35,4 @@ This is a multiple-choice quiz web application designed purely for entertainment
 
 ## Link
 
-[Link to deployed application](https://website-quiz.netlify.app/)
+[Link to deployed application](https://amaan-10.github.io/quiz-website)
