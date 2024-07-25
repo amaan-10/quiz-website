@@ -50,6 +50,14 @@ body{
     color: rgb(179, 0, 255);
 }
 
+#create-quiz {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 .home{
     display: flex;
     height: 100vh; 
@@ -436,3 +444,102 @@ legend{
     background: #b300ff;
     color: #fff;
 }
+
+@media screen and (max-width: 630px) {
+    .home-container h1{
+        font-size: 52px;
+    }    
+    .home-container p {
+        font-size: 14px;
+        margin: 12px;
+        margin-bottom: 20px;
+    }
+
+    .questionsContainer, .quizContainer{
+        width: 320px;
+    }
+
+    .scoreContainer {
+        width: 320px;        
+    }
+    .percentageContainer .piechart{
+        width: 180px;
+        height: 180px;
+    }
+    .percentageContainer .piechart::before{
+        width: 150px;
+        height: 150px;
+    }
+    
+ }
+
+ @media screen and (max-width: 430px) {
+    .home-container .button .start-btn, .create-btn{
+        width: 140px;
+        font-size: 16px; 
+    }
+ }
+
+ @media screen and (max-width: 380px) {
+    .home-container h1{
+        font-size: 44px;
+    }    
+    .home-container p {
+        font-size: 13px;
+        margin: 12px;
+        margin-bottom: 20px;
+    }
+    .home-container .button .start-btn, .create-btn{
+        width: 120px;
+        font-size: 14px;
+        
+    }
+
+    .questionsContainer, .quizContainer{
+        width: 250px;
+    }
+
+    .scoreContainer {
+        width: 250px;        
+    }
+    .scoreContainer h2 {
+        font-size: 28px;
+    }
+    .scoreContainer .percentageContainer {
+        width: 200px;
+        margin: 12px 0 10px;
+    }
+    .percentageContainer .piechart{
+        width: 120px;
+        height: 120px;
+    }
+    .percentageContainer .piechart::before{
+        width: 100px;
+        height: 100px;
+    }
+    .piechart .value {
+        position: relative;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .percentageContainer .score {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 18px;
+    }
+    .buttons button {
+        width: 90px;
+        height: 40px;
+        font-size: 13px;
+        margin: 0 8px 8px;
+    }
+
+    #quizForm input {
+        font-size: 12px;
+        border-radius: 4px;
+        line-height: 1.5;
+        width: 180px;
+        
+    }
+
+ }
