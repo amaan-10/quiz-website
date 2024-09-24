@@ -124,7 +124,7 @@ function saveQuiz() {
   }
 
   // Send data to the server using Fetch API
-  const response = fetch("https://quiz-website-purple.vercel.app/quiz/create", {
+  const response = fetch("https://quiz-website-t7cq.onrender.com/quiz/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -143,7 +143,7 @@ let quiz;
 async function fetchQuizData() {
   try {
     const response = await fetch(
-      "https://quiz-website-purple.vercel.app/quiz/get"
+      "https://quiz-website-t7cq.onrender.com/quiz/get"
     );
     quiz = await response.json();
   } catch (error) {
