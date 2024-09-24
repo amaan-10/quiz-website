@@ -124,7 +124,7 @@ function saveQuiz() {
   }
 
   // Send data to the server using Fetch API
-  const response = fetch("http://localhost:3000/quiz/create", {
+  const response = fetch("https://quiz-website-purple.vercel.app/quiz/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -142,7 +142,9 @@ function saveQuiz() {
 let quiz;
 async function fetchQuizData() {
   try {
-    const response = await fetch("http://localhost:3000/quiz/get");
+    const response = await fetch(
+      "https://quiz-website-purple.vercel.app/quiz/get"
+    );
     quiz = await response.json();
   } catch (error) {
     console.error("Error fetching quiz data:", error);
