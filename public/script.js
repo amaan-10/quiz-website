@@ -183,7 +183,7 @@ setTimeout(() => {
     quizTitleSelect.appendChild(option);
     //console.log(option);
   });
-}, 100);
+}, 1000);
 // function isValidQuizData(data) {
 //   try {
 //     const parsedData = JSON.parse(data);
