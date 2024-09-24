@@ -146,6 +146,7 @@ async function fetchQuizData() {
       "https://quiz-website-t7cq.onrender.com/quiz/get"
     );
     quiz = await response.json();
+    console.log(quiz);
   } catch (error) {
     console.error("Error fetching quiz data:", error);
   }
