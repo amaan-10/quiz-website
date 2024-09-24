@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <header class="header">
+            <a href="index.html" class="logo">Quiz.</a>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+            </nav>
+        </header>
+        <section class="home">
+            <div id="quiz-home" class="home-container">
+                <h1>Quiz Website</h1>
+                <p>Welcome to our quiz website, where you can either dive right into a fun and challenging quiz or
+                    create your own personalized quiz. <br>Click "Start Quiz" to begin an exciting test
+                    of your knowledge, or select "Create Your Own Quiz" to design a custom quiz to your
+                    preferences.</p>
+                <div class="button">
+                    <button class="create-btn" onclick="showCreateQuiz()">Create Quiz</button>
+                    <button class="start-btn" onclick="showQuiz()">Start Quiz</button>
+                </div>
+            </div>
+
+            <div id="create-quiz">
+                <form id="quizForm">
+                    <div id="quizForm1" class="quizForm">
+                        <h1>Create Quiz</h1>
+                        <label for="quizTitle">Quiz Title:</label>
+                        <input type="text" class="quizTitle" id="quizTitle" required>
+
+                        <label for="numQuestions">Number of Questions:</label>
+                        <input type="number" class="numQuestions" id="numQuestions" min="1" required>
+                        <button class="gnrt-btn" id="gnrt-btn" type="button" onclick="generateQuiz()">Start
+                            Quiz</button>
+                    </div>
+                    <div class="questionsContainer" id="questionsContainer"></div>
+
+                    <div class="buttons">
+                        <button class="next-btn" id="next-btn" type="button" style="display: none;"
+                            onclick="nextQuestions()">Next</button>
+                        <button class="save-btn" id="save-btn" type="button" style="display: none;"
+                            onclick="saveQuiz()">Save Quiz</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="start-quiz" style="display: none;">
+                <div class="quiz1">
+                    <h1>Quiz</h1>
+
+                    <!-- Select quiz title -->
+                    <label for="quizTitles">Select Quiz Title:</label>
+                    <select id="quizTitles"></select>
+                    <button type="button" class="load-btn" id="loadButton" onclick="loadQuiz()">Load Quiz</button>
+                </div>
+                <div class="quizContainer" id="quizContainer"></div>
+
+                <button type="button" class="next-btn" id="nextButton" style="display: none;"
+                    onclick="nextQuestion()">Next Question</button>
+                <button type="button" class="submit-btn" id="submitButton" style="display: none;"
+                    onclick="submitQuiz()">Submit Quiz</button>
+
+                <div class="scoreContainer" id="scoreContainer" style="display: none;">
+
+                </div>
+            </div>
+
+
+
+        </section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
