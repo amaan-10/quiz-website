@@ -162,7 +162,7 @@ const quizTitleSelect = document.getElementById("quizTitles");
 setTimeout(() => {
   //console.log("Global apiResponse after timeout:", quiz); // This may still log undefined if called too early
 
-  //console.log(quiz);
+  console.log(quiz);
 
   // Load quiz titles from localStorage
   function isValidQuizData(data) {
