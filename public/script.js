@@ -138,7 +138,7 @@ function saveQuiz() {
   alert("Quiz saved successfully! Start Quiz to try it!!");
   setTimeout(function () {
     window.location.href = "index.html";
-  }, 1000);
+  }, 500);
 }
 
 // show quiz-----------------------------------------------------
