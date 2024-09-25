@@ -136,6 +136,9 @@ function saveQuiz() {
   //alert(result); // Show the response from the server
 
   alert("Quiz saved successfully! Start Quiz to try it!!");
+  setTimeout(function () {
+    window.location.href = "index.html";
+  }, 1000);
 }
 
 // show quiz-----------------------------------------------------
@@ -146,7 +149,7 @@ async function fetchQuizData() {
       "https://quiz-website-t7cq.onrender.com/quiz/get"
     );
     quiz = await response.json();
-    console.log(quiz);
+    // console.log(quiz);
   } catch (error) {
     console.error("Error fetching quiz data:", error);
   }
@@ -162,7 +165,7 @@ const quizTitleSelect = document.getElementById("quizTitles");
 setTimeout(() => {
   //console.log("Global apiResponse after timeout:", quiz); // This may still log undefined if called too early
 
-  console.log(quiz);
+  // console.log(quiz);
 
   // Load quiz titles from localStorage
   function isValidQuizData(data) {
