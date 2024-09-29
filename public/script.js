@@ -173,13 +173,16 @@ async function handleRegister(event) {
 
   try {
     // Send the registration request to the backend (replace with your API endpoint)
-    const response = await fetch("http://localhost:3000/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(registerData),
-    });
+    const response = await fetch(
+      "https://quiz-website-t7cq.onrender.com/auth/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registerData),
+      }
+    );
 
     if (response.ok) {
       // Registration successful
