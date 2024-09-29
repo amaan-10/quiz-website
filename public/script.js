@@ -19,15 +19,189 @@ const loadButton = document.getElementById("loadButton");
 const scoreContainer = document.getElementById("scoreContainer");
 const quiz1 = document.getElementsByClassName("quiz1");
 
+const login = document.getElementById("loginPage");
+const register = document.getElementById("registerPage");
+
+function loginPage() {
+  home.style.display = "none";
+  login.style.display = "block";
+  register.style.display = "none";
+}
+
+function registerPage() {
+  home.style.display = "none";
+  login.style.display = "none";
+  register.style.display = "block";
+}
+
 function showQuiz() {
   startQuiz.style.display = "block";
   home.style.display = "none";
 }
 
-function showCreateQuiz() {
-  createQuiz.style.display = "block";
-  home.style.display = "none";
+// Function to check if the user is logged in
+function isLoggedIn() {
+  // Example: Check if a token exists in localStorage
+  return !!localStorage.getItem("authToken"); // Replace with your actual check
 }
+
+// Function to redirect to the login page
+function redirectToLogin() {
+  createQuiz.style.display = "none";
+  startQuiz.style.display = "none";
+  home.style.display = "none";
+  login.style.display = "block";
+}
+
+// Function that handles the button click
+function showCreateQuiz() {
+  if (isLoggedIn()) {
+    // User is logged in, perform the intended action
+    //console.log("Executing onclick function");
+    createQuiz.style.display = "block";
+    home.style.display = "none";
+  } else {
+    // User is not logged in, redirect to login page
+    redirectToLogin();
+  }
+}
+
+// Function to handle logout action
+function logout() {
+  // Remove the token from localStorage
+  localStorage.removeItem("authToken");
+
+  // Redirect to homepage or login page after logging out
+  window.location.href = "/";
+}
+
+// Function to set the navbar value dynamically
+function setNavbarValue() {
+  const authButton = document.getElementById("authButton");
+
+  if (isLoggedIn()) {
+    // User is logged in, show "Logout" and attach logout function
+    authButton.textContent = "Logout";
+    authButton.onclick = logout;
+  } else {
+    // User is not logged in, show "Login" and attach login function
+    authButton.textContent = "Login";
+    authButton.onclick = redirectToLogin;
+  }
+}
+
+// Call the function to set the navbar value when the page loads
+window.onload = setNavbarValue;
+
+// login function------------------------------------------------
+
+async function handleLogin(event) {
+  event.preventDefault(); // Prevent form from submitting the default way
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  // Prepare the login request body
+  const loginData = {
+    email: email,
+    password: password,
+  };
+
+  try {
+    // Make the login request to the server (replace with your API endpoint)
+    const response = await fetch(
+      "https://quiz-website-t7cq.onrender.com/auth/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+
+      // Assume the response contains a token
+      const authToken = data.token;
+
+      // Save the token to localStorage
+      localStorage.setItem("authToken", authToken);
+
+      alert("Login successfull..!!");
+
+      // Redirect the user after successful login
+      window.location.href = "";
+    } else {
+      // Handle login error (e.g., show a message to the user)
+      alert("Login failed. Please check your credentials.");
+    }
+  } catch (error) {
+    console.error("Error logging in:", error);
+    alert("An error occurred during login. Please try again.");
+  }
+}
+
+// Attach the submit event to the login form
+document.getElementById("loginForm").addEventListener("submit", handleLogin);
+
+// register function------------------------------------------------
+// Function to handle the registration form submission
+async function handleRegister(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const name = document.getElementById("registerName").value;
+  const email = document.getElementById("registerEmail").value;
+  const password = document.getElementById("registerPassword").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  // Check if passwords match
+  if (password !== confirmPassword) {
+    alert("Passwords do not match!");
+    return;
+  }
+
+  // Prepare registration data
+  const registerData = {
+    name: name,
+    email: email,
+    password: password,
+  };
+
+  console.log(registerData);
+
+  try {
+    // Send the registration request to the backend (replace with your API endpoint)
+    const response = await fetch("http://localhost:3000/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(registerData),
+    });
+
+    if (response.ok) {
+      // Registration successful
+      alert("Registration successful! Please log in.");
+      // Redirect to login page after successful registration
+      login.style.display = "block";
+      register.style.display = "none";
+    } else {
+      // Registration failed
+      const errorData = await response.json();
+      alert(`Registration failed: ${errorData.message}`);
+    }
+  } catch (error) {
+    console.error("Error registering:", error);
+    alert("An error occurred during registration. Please try again.");
+  }
+}
+
+// Attach the submit event to the registration form
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", handleRegister);
 
 // create quiz------------------------------------------------
 

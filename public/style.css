@@ -44,13 +44,33 @@ body{
     font-weight: 500;
     margin-left: 35px;
     transition: .3s;
+    cursor: pointer;
 }
 
-.navbar a:hover, .navbar a.active{
+.registerPage a, .loginPage a{
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: .3s;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.registerPage a:hover, .loginPage a:hover, .loginPage a:active, .navbar a:hover, .navbar a.active{
     color: rgb(179, 0, 255);
 }
 
 #create-quiz {
+    display: none;
+}
+
+#loginPage{
+    display: none;
+}
+
+#registerPage{
     display: none;
 }
 
@@ -66,14 +86,14 @@ body{
     align-items: center;
 }
 
-.home-container,.quizForm, .quiz1{
+.home-container,.quizForm, .registerPage, .loginPage, .quiz1{
     max-width: 600px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-#quizForm input{
+#registerPage input, #loginPage input, #quizForm input{
     font-size: 13px;
     border-radius: 4px;
     line-height: 1.5;
@@ -89,12 +109,12 @@ body{
 }
 
 
-#quizForm input:hover {
+#registerPage input:hover, #loginPage input:hover, #quizForm input:hover {
     outline: none;
     border-color: #ccc;
 }
 
-#quizForm input:focus{
+#registerPage input:focus, #loginPage input:focus, #quizForm input:focus{
     outline: none;
     border-color: #9147ff;
     background: #fff;
@@ -182,13 +202,13 @@ body{
     box-shadow: none;
 }
 
-.quiz1 h1,.quizForm h1{
+.quiz1 h1,.registerPage h1, .loginPage h1, .quizForm h1{
     font-size: 40px;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.quiz1,.quizForm label{
+.quiz1, .registerPage label, .loginPage label, .quizForm label{
     font-size: 18px;
 }
 
@@ -212,7 +232,7 @@ select option {
     background-color: rgb(55, 0, 77);
 }
 
-.load-btn, .next-btn, .submit-btn, .gnrt-btn, .save-btn{
+.load-btn, .next-btn, .submit-btn, .gnrt-btn, .register-btn, .login-btn, .save-btn{
     width: 150px;
     height: 45px;
     margin-left: 10px;
@@ -230,7 +250,7 @@ select option {
 }
 
 
-.load-btn:hover, .next-btn:hover, .submit-btn:hover, .gnrt-btn:hover, .save-btn:hover{
+.load-btn:hover, .next-btn:hover, .submit-btn:hover, .gnrt-btn:hover, .register-btn:hover, .login-btn:hover, .save-btn:hover{
     background: #b300ff;
     box-shadow: 0 0 8px rgb(179, 0, 255);
 }

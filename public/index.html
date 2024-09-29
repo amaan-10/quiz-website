@@ -18,9 +18,10 @@
 <body>
     <main class="main">
         <header class="header">
-            <a href="index.html" class="logo">Quiz.</a>
+            <a href="" class="logo">Quiz.</a>
             <nav class="navbar">
-                <a href="index.html">Home</a>
+                <a href="">Home</a>
+                <a id="authButton">Login</a>
             </nav>
         </header>
         <section class="home">
@@ -55,6 +56,46 @@
                             onclick="nextQuestions()">Next</button>
                         <button class="save-btn" id="save-btn" type="button" style="display: none;"
                             onclick="saveQuiz()">Save Quiz</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="loginPage">
+                <form id="loginForm">
+                    <div id="login-form1" class="loginPage">
+                        <h1>Login</h1>
+                        <label for="email">Email:</label>
+                        <input type="text" class="email" id="email" required>
+
+                        <label for="password">Password:</label>
+                        <input type="password" class="password" id="password" required>
+
+                        <a onclick="registerPage()">Don't have an account? Create One.</a>
+
+                        <button class="login-btn" id="login-btn" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="registerPage">
+                <form id="registerForm">
+                    <div id="register-form1" class="registerPage">
+                        <h1>Register</h1>
+                        <label for="name">Name:</label>
+                        <input type="text" class="name" id="registerName" required>
+
+                        <label for="email">Email:</label>
+                        <input type="text" class="email" id="registerEmail" required>
+
+                        <label for="password">Password:</label>
+                        <input type="password" class="password" id="registerPassword" required>
+
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" class="confirmPassword" id="confirmPassword" required>
+
+                        <a onclick="loginPage()">Have an account? Login here.</a>
+
+                        <button class="register-btn" id="register-btn" type="submit">Register</button>
                     </div>
                 </form>
             </div>
