@@ -70,6 +70,7 @@ function showCreateQuiz() {
 function logout() {
   // Remove the token from localStorage
   localStorage.removeItem("authToken");
+  alert("Logout successfull..!!");
 
   // Redirect to homepage or login page after logging out
   window.location.href = "/";
