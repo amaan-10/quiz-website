@@ -315,12 +315,11 @@ function saveQuiz() {
 
 // show quiz-----------------------------------------------------
 let quiz;
-console.log(quiz);
 async function fetchQuizData() {
   try {
     const response = await fetch("/quiz/get");
     quiz = await response.json();
-    // console.log(quiz);
+    console.log(quiz);
   } catch (error) {
     console.error("Error fetching quiz data:", error);
   }
