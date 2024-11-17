@@ -110,16 +110,13 @@ async function handleLogin(event) {
 
   try {
     // Make the login request to the server (replace with your API endpoint)
-    const response = await fetch(
-      "https://quiz-website-t7cq.onrender.com/auth/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginData),
-      }
-    );
+    const response = await fetch("/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginData),
+    });
 
     if (response.ok) {
       const data = await response.json();
@@ -174,16 +171,13 @@ async function handleRegister(event) {
 
   try {
     // Send the registration request to the backend (replace with your API endpoint)
-    const response = await fetch(
-      "https://quiz-website-t7cq.onrender.com/auth/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(registerData),
-      }
-    );
+    const response = await fetch("/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(registerData),
+    });
 
     if (response.ok) {
       // Registration successful
@@ -302,7 +296,7 @@ function saveQuiz() {
   }
 
   // Send data to the server using Fetch API
-  const response = fetch("https://quiz-website-t7cq.onrender.com/quiz/create", {
+  const response = fetch("/quiz/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -323,9 +317,7 @@ function saveQuiz() {
 let quiz;
 async function fetchQuizData() {
   try {
-    const response = await fetch(
-      "https://quiz-website-t7cq.onrender.com/quiz/get"
-    );
+    const response = await fetch("/quiz/get");
     quiz = await response.json();
     // console.log(quiz);
   } catch (error) {
