@@ -315,6 +315,7 @@ function saveQuiz() {
 
 // show quiz-----------------------------------------------------
 let quiz;
+console.log(quiz);
 async function fetchQuizData() {
   try {
     const response = await fetch("/quiz/get");
