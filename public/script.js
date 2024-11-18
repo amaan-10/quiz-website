@@ -356,7 +356,7 @@ setTimeout(() => {
     quizTitleSelect.appendChild(option);
     //console.log(option);
   });
-}, 1000);
+}, 500);
 // function isValidQuizData(data) {
 //   try {
 //     const parsedData = JSON.parse(data);
